@@ -5,16 +5,34 @@ h1 {
     font-size: 50px;
 }
 
+h2 {
+  color: lightgrey;
+  font-family: 'Shadows Into Light', cursive;
+
+}
+
 body {
     background-image: url(../images/keys-top.jpg);
     /* Background Photos from  <a href="https://pngtree.com/freebackground/vector-piano-concert-poster_142631.html">pngtree.com</a> */
     width: 100%;
-  height: 700px;
+  height: 570px;
   background-size: 100% 100%;
   /* revised code from W3 Schools */
+}
+
+p {
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+
 }
 
 .jumbotron {
   background-color: #d21819;
   opacity: 0.75;
+  /* makes the jumbotron transparent */
+  height: 50px;
+}
+
+.display-4 {
+  text-align: center;
 }
