@@ -1,23 +1,22 @@
 h1 {
   /* changing text */
   font-family: 'Berkshire Swash', cursive;
-  color: #e1001e;
+  color: #e10e2a;
     font-size: 70px;
 }
 
 h2 {
-  color: #e1001e;
+  color: #e10e2a;
   font-family: 'Berkshire Swash', cursive;
+  font-size: 30px;
 
 }
 
 body {
       background-image: url(../images/pianobackground.jpg);
   /* <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a> */
-    /* background-image: url(../images/keys-top.jpg); */
-    /* Background Photos from  <a href="https://pngtree.com/freebackground/vector-piano-concert-poster_142631.html">pngtree.com</a> */
     width: 100%;
-  height: 640px;
+  height: 620px;
   background-size: 100% 100%;
   /* revised code from W3 Schools */
   color: white;

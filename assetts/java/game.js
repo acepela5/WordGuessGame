@@ -25,28 +25,21 @@ var losses = 0;
 var wrongGuessLetter = "";
 console.log(wrongGuessLetter);
 
+// connects the html elements to the js actions
 var winsdiv = document.getElementById("numberOfWins");
 var lossesdiv = document.getElementById("numberOfLosses");
 var guessesDiv = document.getElementById("guessesRemaining");
 var displayBoardDiv = document.getElementById("output");
 var wrongGuessDiv = document.getElementById("wrongGuess");
 
-//start game function
-//numofguesses = 9
-//set chosen word
-// lettersInWord = computerPickWord.length; --this goes in start game function
-//check letter function: does input letter match anyof lettersInWord
-//loop throught that array and push right guess letter
-//if its a match, show in composers div
-//if not a match, show in letters guess div
-
+// adds underscore to the board 
 var boardGame = [];
 for (var i = 0; i < computerPickWord.length; i++) {
   boardGame[i] = "_";
-  // rightGuessLetter.push();
 }
 console.log(computerPickWord);
 
+// resets game
 var userInput = "";
 function resetGame() {
     boardGame = [];
@@ -74,23 +67,19 @@ function resetGame() {
 
   for (var i = 0; i < computerPickWord.length; i++) {
     boardGame[i] = "_";
-    // rightGuessLetter.push();
   }
 
   guessesDiv.textContent = numberofGuessCount;
   wrongGuessDiv.textContent = "";
 
 }
-// console.log(userInput);
-
-// code referenced from Rock, Paper, Scissors solved video
-// records keys pressed and  makes them uppercase
-
+// displays numbers in div 
 displayBoardDiv.textContent = boardGame.join(" ");
 winsdiv.textContent = wins;
 lossesdiv.textContent = losses;
 guessesDiv.textContent = numberofGuessCount;
 
+// adds the correct number of underscores for the computer choosen word
 function checkBoardGameWithComputerPickWord() {
   for (var i = 0; i < computerPickWord.length; i++) {
     if (computerPickWord[i].toLowerCase() === userInput) {
@@ -100,10 +89,13 @@ function checkBoardGameWithComputerPickWord() {
   displayBoardDiv.textContent = boardGame.join(" ");
 }
 
+// when the game is being played...
 function playGame(){
 
     checkBoardGameWithComputerPickWord();
 
+    // if the letter chosen does not match a letter in the chosen word, the number of guesses goes down
+    // if the number of guess reaches 0 the number of losses goes up by one and the game is reset
     if (boardGame.indexOf("_") === -1) {
       wins++;
       winsdiv.textContent = " " + wins;
@@ -118,36 +110,26 @@ function playGame(){
           if (numberofGuessCount === 0) {
               losses++;
               lossesdiv.textContent = " " + losses;
-             
               resetGame();
           }
-       }
-  
-      // numberofGuessCount = numberofGuessCount - 1;
-      // guessesdiv.textContent = "" + numberofGuessCount;
-      // console.log("userInput:", userInput);
-       
-      // console.log("wrongGuessLetter:", wrongGuessLetter);
-       
+       }       
     }
 }
-
+// changes letter entered to lower case letters and a string
 document.onkeyup = function(event) {
   userInput = event.key.toLowerCase().toString();
   userKeycode=event.keyCode;
-//  keeps keys that aren't upper case and lower case letters from being pressed'
+//  keeps keys that aren't upper case and lower case letters from being pressed
+// https://www.ascii.cl/htmlcodes.htm
   if( (userKeycode>= 65 && userKeycode  <=90 ) || ( userKeycode >=97 && userKeycode <= 122)  ) 
   {
     if(wrongGuessLetter.indexOf(userInput)  ===-1)  
          playGame();
     else
-         alert("sorry you picked this letter already!");
+         alert("sorry, you picked this letter already!");
   }
   else{
-      alert("hey, letters only");
+      alert("Hey, letters only!");
   }
 
-
-  
-//   }
 };
