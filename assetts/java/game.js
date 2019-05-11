@@ -43,13 +43,12 @@
     console.log(userguess);
         var displayBoardDiv = document.getElementById("output");
         displayBoardDiv.textContent = boardGame.join("");
-        outputdiv.textContent="";
 
 
     var winsdiv = document.getElementById("numberOfWins");
     var lossesdiv = document.getElementById("numberOfLosses");
     var guessesdiv = document.getElementById("guessesRemaining");
-    var outputdiv = document.getElementById("output");
+
 
     if(computerPickWord.indexOf(userInput)> -1) {
         boardGame[computerPickWord.indexOf(userInput)]=userInput;
@@ -67,16 +66,17 @@
 
     else {
         numberofGuessCount = numberofGuessCount-1;
-        wrongGuessLetter=wrongGuessLetter + userInput + ",";
-        console.log(wrongGuessLetter);
-        var outputWrongDiv= document.getElementById("wrongGuess");
         guessesdiv.textContent="" + numberofGuessCount;
-        outputWrongDiv.textContent=wrongGuessLetter;
+        var outputWrongDiv= document.getElementById("wrongGuess");
+        outputWrongDiv.textContent = wrongGuessLetter;
+        wrongGuessLetter=wrongGuessLetter + userInput + ",";
+        // console.log(wrongGuessLetter);
+    }
         if(numberofGuessCount===0) {
             losses++;
             lossesdiv.textContent="losses" + losses ;
             resetGame();
         }
-    }
+    
 
     }
