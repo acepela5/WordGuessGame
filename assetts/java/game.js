@@ -51,7 +51,7 @@ function resetGame() {
     "PROKOFIEV",
     "RIMSKYKORSAKOV",
     "MUSSORGSKY"
-  ];git
+  ];
   // code influenced by sample sent from instructor Phil L.
 
   //math.random chooses a random number between 0 and 1, is multiplied by the number of words in the array, and is rounded to the lowest whole number with Math.Floor
