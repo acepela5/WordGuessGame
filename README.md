@@ -12,7 +12,6 @@ Who doesn't love a quick game of hangman? Here the user guesses letters at rando
 ![ ](/Screenshot(35).png)
 
 ## Author
----
 Adi Cepela - https://github.com/acepela5
 
 ## Deployed Link
